@@ -10,14 +10,14 @@ def grab_data():
     r = requests.get(url = url)
     soup = BeautifulSoup(r.text)
     price = soup.find('div',{"class":"priceValue___11gHJ"})
-    perchange = soup.find('span',{"class":"gEePkg"})
+    perchange = soup.find('span',{"class":"feeyND"})
     pos = perchange.find('span',{"class":"icon-Caret-up"})
     neg = perchange.find('span',{"class":"icon-Caret-down"})
     if(pos):
       change = '+'+perchange.text
     elif(neg):
        change = '-'+perchange.text
-  
+
     #printing
     print("BITCOIN")
     print("Price :",price.text) 
